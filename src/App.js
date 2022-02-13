@@ -43,6 +43,29 @@ const Tooltip = styled.div`
 
   ${({ $visible }) => ($visible ? "" : "transition: opacity 0.2s;")}
 `;
+const About = styled.div`
+  position: fixed;
+  padding: 8px;
+  bottom: 0px;
+  right: 0px;
+  z-index: 100000;
+  color: white;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+
+  :hover {
+    opacity: 1;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
+`;
 
 const App = () => {
   const [isTooltipVisible, setIsTooltipVisible] = useState(false);
@@ -51,7 +74,14 @@ const App = () => {
 
   return (
     <div>
-      <Map center={[46.204391, 6.143158]} zoom={5} maxZoom={6} minZoom={4}>
+      <Map
+        center={[46.204391, 6.143158]}
+        zoom={5}
+        maxZoom={6}
+        minZoom={4}
+        attributionControl={false}
+        zoomControl={false}
+      >
         <ImageOverlay
           url={`data:image/svg+xml;utf8,${encodeURIComponent(svgMap)}`}
           bounds={bounds}
@@ -102,6 +132,16 @@ const App = () => {
         </div>
         {displayedColiving?.city}
       </Tooltip>
+      <About>
+        <b>colivin.gs: map of european colivings</b> •{" "}
+        <a
+          href="https://github.com/ntag/colivings"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Github
+        </a>
+      </About>
     </div>
   );
 };
