@@ -72,4 +72,16 @@ export const colivings = [
     location: [68.2397233, 13.6313107],
     website: "http://www.arcticcoworking.com/",
   },
+  {
+    name: "Outsite",
+    city: "Lisbon",
+    location: [38.7083767, -9.1472796],
+    website: "https://www.outsite.co/locations/lisbon-cais-do-sodre",
+  },
+  {
+    name: "Outsite",
+    city: "Ericeira",
+    location: [38.9640586, -9.4160498],
+    website: "https://www.outsite.co/locations/ericeira",
+  },
 ];
